@@ -21,5 +21,8 @@
   "gitHead": "ac86c0782d613a36482d31bcf6d531944a07d4ee",
   "bugs": {
     "url": "https://github.com/iamdoron/datify/issues"
+  },
+  "devDependencies": {
+    "lab": "~1.1.0"
   }
 }
