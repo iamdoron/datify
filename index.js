@@ -1,3 +1,7 @@
 module.exports = function(raw){
-	return new Date(raw);
+	var parsedDate = Date.parse(raw);
+	if (!parsedDate) {
+		parsedDate = raw;
+	}
+	return parsedDate;
 };
