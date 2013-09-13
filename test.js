@@ -18,6 +18,12 @@ Lab.experiment('datify', function(){
 		done();
 	}),
 
+	it('should keep a js Date unchanged', function(done){
+		Datify(new Date('2011-09-13T17:09:30.909Z')).should.eql(new Date('2011-09-13T17:09:30.909Z'));
+		Datify(new Date('2011-09-13T17:09:30.909Z')).toISOString().should.eql('2011-09-13T17:09:30.909Z');
+		done();
+	}),
+
 	it('should convert an object with an ISO date string to an object with Date', function(done){
 		var anObject = {
 			content: { },
