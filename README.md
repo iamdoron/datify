@@ -3,6 +3,7 @@ datify
 
 datify your objects.
 
+![Build Status](https://api.travis-ci.org/iamdoron/datify.png?branch=master)
 
 ## how
 
