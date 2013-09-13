@@ -3,8 +3,7 @@ datify
 
 datify your objects.
 
-![Build Status](https://api.travis-ci.org/iamdoron/datify.png?branch=master)
-
+[![Build Status](https://travis-ci.org/iamdoron/datify.png?branch=master)](https://travis-ci.org/iamdoron/datify)
 ## how
 
 `> npm install datify`
