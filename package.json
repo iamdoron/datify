@@ -23,6 +23,7 @@
     "url": "https://github.com/iamdoron/datify/issues"
   },
   "devDependencies": {
-    "lab": "~1.1.0"
+    "lab": "~1.1.0",
+    "chai": "~1.7.2"
   }
 }
