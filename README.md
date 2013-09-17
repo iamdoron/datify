@@ -5,6 +5,8 @@ datify your objects.
 
 [![Build Status](https://travis-ci.org/iamdoron/datify.png?branch=master)](https://travis-ci.org/iamdoron/datify)
 
+[![Browser Build Status](http://ci.testling.com/iamdoron/datify.png)](http://ci.testling.com/iamdoron/datify)
+
 ## how
 
 `> npm install datify`
