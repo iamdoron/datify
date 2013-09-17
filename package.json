@@ -4,6 +4,10 @@
   "description": "datify your objects.",
   "main": "index.js",
   "scripts": {
+    "blanket": {
+      "pattern": "//^((?!node_modules).)*index.js$/"
+    },
+    "travis-cov": { "threshold": 100 },
     "test": "make test-cov"
   },
   "repository": {
@@ -23,7 +27,10 @@
   },
   "devDependencies": {
     "lab": "~1.1.0",
-    "chai": "~1.7.2"
+    "chai": "~1.7.2",
+    "blanket": "~1.1.5",
+    "travis-cov": "~0.2.4",
+    "mocha": "~1.13.0"
   },
   "dependencies": {
     "traverse": "~0.6.5"

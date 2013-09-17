@@ -1,8 +1,8 @@
+test-no-cov:
+	@mocha
 test:
-	@node node_modules/.bin/lab test.js
-test-cov:
-	@node node_modules/.bin/lab test.js -r threshold -t 100
+	@./node_modules/.bin/mocha --require blanket  -R travis-cov
 test-cov-html:
-	@node node_modules/.bin/lab test.js -r html -o coverage.html
+	mocha --require blanket -R html-cov > coverage.html
 
-.PHONY: test test-cov test-cov-html
+.PHONY: test test-no-cov test-cov-html
