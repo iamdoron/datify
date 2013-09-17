@@ -63,5 +63,13 @@ Lab.experiment('datify', function(){
 		});
 
 		done();
+	}),
+
+	it('should convert an array of Dates', function(done){
+		var anArrayOfDates = ['2011-10-13T17:12:30.909Z', '2011-10-13T17:12:30.909Z', '2012-10-13T17:12:30.909Z']
+		Datify(anArrayOfDates).should.eql([new Date('2011-10-13T17:12:30.909Z'), 
+			new Date('2011-10-13T17:12:30.909Z'), new Date('2012-10-13T17:12:30.909Z')]);
+
+		done();
 	});
 });
