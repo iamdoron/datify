@@ -34,5 +34,14 @@
   },
   "dependencies": {
     "traverse": "~0.6.5"
+  },
+
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+        "ie6", "ie7", "ie8", "ie9",
+        "firefox/19", "chrome/25", "opera/12", "safari/5.1"
+    ],
+    "harness": "mocha-bdd"
   }
 }
