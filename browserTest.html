@@ -1,0 +1,21 @@
+<html>
+<head>
+	<title> Datify Test</title>
+	<link rel="stylesheet" href="node_modules/mocha/mocha.css">
+</head>
+<body>
+	<div id="mocha">
+		
+	</div>
+	<script type="text/javascript" src="node_modules/mocha/mocha.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		mocha.setup("bdd");
+	</script>
+	<script src="testScript.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		mocha.checkLeaks();
+		mocha.run();
+	</script>
+
+</body>
+</html>
