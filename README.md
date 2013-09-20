@@ -28,6 +28,11 @@ DB - but your dates are strings (the JSON way). So what you do is store the dati
 collection.insert(datify(JSON.parse(payload)), function(){ /* do something*/ });
 ```
 
+Suppose you are using an API (from the browser, for example), that have dates in it, as strings (it is JSON, after all) - you just datify it.
+```javascript
+apiResult = datify(apiResult);
+```
+
 ## test
 ```sh
 > npm install
