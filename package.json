@@ -7,7 +7,9 @@
     "blanket": {
       "pattern": "//^((?!node_modules).)*index.js$/"
     },
-    "travis-cov": { "threshold": 100 },
+    "travis-cov": {
+      "threshold": 100
+    },
     "test": "make test"
   },
   "repository": {
@@ -33,14 +35,21 @@
     "mocha": "~1.13.0"
   },
   "dependencies": {
-    "traverse": "~0.6.5"
+    "traverse": "~0.6.6"
   },
-
   "testling": {
     "files": "test.js",
     "browsers": [
-        "ie8", "ie9",
-        "firefox/15", "firefox/19", "chrome/25", "opera/12", "safari/5.1"
+      "ie8",
+      "ie9",
+      "firefox/15",
+      "firefox/19",
+      "chrome/25",
+      "opera/12",
+      "safari/5.1",
+      "safari/6.0",
+      "android-browser/4.2",
+      "iphone/6.0"
     ],
     "harness": "mocha-bdd"
   }
