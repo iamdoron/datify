@@ -38,3 +38,13 @@ apiResult = datify(apiResult);
 > npm install
 > make test
 ```
+
+## test on your favorite browser
+```sh
+> npm install
+> make browserify-test
+```
+open browserTest.html in your favorite browser, for example:
+```sh
+> firefox ./browserTest.html 
+```
