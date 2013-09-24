@@ -1,6 +1,6 @@
 {
   "name": "datify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "datify your objects.",
   "main": "index.js",
   "scripts": {
