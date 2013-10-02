@@ -3,11 +3,21 @@ var Chai = require('chai');
 
 Chai.should();
 
-describe('datify', function(){
+describe('conservative datify', function(){
+	it('should keep a string integer a string (conservative by default)', function(){
+		Datify('1999').should.eql('1999');
+	})
 	it('should convert an ISO Date string to the right date', function(done){
 		Datify('2011-09-13T17:09:30.909Z').should.eql(new Date('2011-09-13T17:09:30.909Z'));
 		Datify('2011-09-13T17:09:30.909Z').toISOString().should.eql('2011-09-13T17:09:30.909Z');
 		Datify('2011-09-13T17:09:30.909Z').constructor.toString().should.contain('function Date');
+		done();
+	}),
+
+	it('should convert an ISO Date string with no ms to the right date', function(done){
+		Datify('2011-09-13T17:09:30Z').should.eql(new Date('2011-09-13T17:09:30Z'));
+		Datify('2011-09-13T17:09:30Z').toISOString().should.eql('2011-09-13T17:09:30.000Z');
+		Datify('2011-09-13T17:09:30Z').constructor.toString().should.contain('function Date');
 		done();
 	}),
 
@@ -68,5 +78,36 @@ describe('datify', function(){
 			new Date('2011-10-13T17:12:30.909Z'), new Date('2012-10-13T17:12:30.909Z')]);
 
 		done();
+	});
+});
+
+describe('non-conservative datify', function(){
+	before(function(){
+		Datify.options.conservative = false;
+	});
+
+	it('should parse a year as a date', function(){
+		Datify('1999').should.eql(new Date('1999'));
+	})
+
+	it('should convert an object with nested ISO date strings to an object with Dates', function(){
+		var anObject = {
+			number: 3441,
+			date: new Date(),
+			content: { createdAt: '2011-10-13T17:12:30.909Z', i: {am: {losing: {it: '2011-10-13T17:12:30.929Z', yep: "i am"}}}},
+			createdAt: '2011-09-13T17:12:30.909Z'
+		}
+		Datify(anObject).should.eql({
+			number: 3441,
+			date: anObject.date,
+			content: { createdAt: new Date('2011-10-13T17:12:30.909Z'), i: {am: {losing: {it: new Date('2011-10-13T17:12:30.929Z'), yep: "i am"}}}},
+			createdAt: new Date('2011-09-13T17:12:30.909Z')
+		});
+	}),
+
+	it('should convert an array of Dates', function(){
+		var anArrayOfDates = ['2011-10-13T17:12:30.909Z', '2011-10-13T17:12:30.909Z', '2012-10-13T17:12:30.909Z']
+		Datify(anArrayOfDates).should.eql([new Date('2011-10-13T17:12:30.909Z'), 
+			new Date('2011-10-13T17:12:30.909Z'), new Date('2012-10-13T17:12:30.909Z')]);
 	});
 });
