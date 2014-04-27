@@ -12,16 +12,16 @@ var ISOStringRegEx = /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d)?\d{0,2}Z$/;
 				this.update(datifyString(value));
 			}
 		});
-	};	
+	};
 
 	function hasDatifyPotential(value){
 		return (typeof value === 'string') && (module.exports.options.conservative ? ISOStringRegEx.test(value): true)
 	};
 
 	function datifyString(raw){
-		var parsedDate = Date.parse(raw);
-		if (parsedDate) {
-			return new Date(parsedDate);
+		var parsedDate = new Date(raw);
+		if (!isNaN(parsedDate.getTime())) {
+			return parsedDate;
 		}
 		else {
 			return raw;

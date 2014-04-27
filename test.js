@@ -74,9 +74,14 @@ describe('conservative datify', function(){
 
 	it('should convert an array of Dates', function(done){
 		var anArrayOfDates = ['2011-10-13T17:12:30.909Z', '2011-10-13T17:12:30.909Z', '2012-10-13T17:12:30.909Z']
-		Datify(anArrayOfDates).should.eql([new Date('2011-10-13T17:12:30.909Z'), 
+		Datify(anArrayOfDates).should.eql([new Date('2011-10-13T17:12:30.909Z'),
 			new Date('2011-10-13T17:12:30.909Z'), new Date('2012-10-13T17:12:30.909Z')]);
 
+		done();
+	});
+
+	it('should convert Date(0).toISOString() to Date', function(done){
+		Datify(new Date(0).toISOString()).should.eql(new Date(0));
 		done();
 	});
 });
@@ -107,7 +112,7 @@ describe('non-conservative datify', function(){
 
 	it('should convert an array of Dates', function(){
 		var anArrayOfDates = ['2011-10-13T17:12:30.909Z', '2011-10-13T17:12:30.909Z', '2012-10-13T17:12:30.909Z']
-		Datify(anArrayOfDates).should.eql([new Date('2011-10-13T17:12:30.909Z'), 
+		Datify(anArrayOfDates).should.eql([new Date('2011-10-13T17:12:30.909Z'),
 			new Date('2011-10-13T17:12:30.909Z'), new Date('2012-10-13T17:12:30.909Z')]);
 	});
 });

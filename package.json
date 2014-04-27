@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "description": "datify your objects.",
   "main": "index.js",
-  "scripts": {
+  "config": {
     "blanket": {
       "pattern": "//^((?!node_modules).)*index.js$/"
     },
