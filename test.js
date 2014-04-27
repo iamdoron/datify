@@ -84,6 +84,12 @@ describe('conservative datify', function(){
 		Datify(new Date(0).toISOString()).should.eql(new Date(0));
 		done();
 	});
+
+	it('should convert 2000-01-01T00:00:00.000000Z to Date', function(done){
+		Datify("2000-01-01T00:00:00.000000Z").should.eql(new Date("2000-01-01T00:00:00.000000Z"));
+		done();
+	});
+
 });
 
 describe('non-conservative datify', function(){

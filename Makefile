@@ -1,5 +1,5 @@
 test-no-cov:
-	@mocha
+	@./node_modules/.bin/mocha
 test:
 	@./node_modules/.bin/mocha --require blanket  -R travis-cov
 test-cov-html:

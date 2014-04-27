@@ -1,7 +1,8 @@
-var ISOStringRegEx = /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d)?\d{0,2}Z$/;
 
 (function(){
 	var Traverse = require('traverse');
+
+	var ISOStringRegEx = /^(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$/;
 
 	module.exports = datify;
 	module.exports.options = { conservative: true }
