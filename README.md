@@ -12,7 +12,7 @@ datify your objects.
 `> npm install datify`
 
 ```javascript
-Datify = require('datify');
+const Datify = require('datify');
 
 Datify('2011-09-13T17:09:30.909Z').should.eql(new Date('2011-09-13T17:09:30.909Z'));
 
